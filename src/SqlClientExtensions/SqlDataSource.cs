@@ -84,7 +84,7 @@ public abstract class SqlDataSource : DbDataSource
     /// <param name="commandText">An optional SQL text for the command.</param>
     public new SqlCommand CreateCommand(string? commandText = null)
     {
-        var command = CreateConnection().CreateCommand();
+        var command = OpenConnection().CreateCommand();
         if (commandText != null)
         { 
             command.CommandText = commandText;

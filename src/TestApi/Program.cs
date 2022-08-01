@@ -20,7 +20,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/", async ([FromServices] SqlConnection connection) =>
+app.MapGet("/hello", async ([FromServices] SqlConnection connection) =>
 {
     await connection.OpenAsync();
     await using var command = new SqlCommand("SELECT TOP 1 SupplierID FROM Suppliers", connection);
@@ -29,7 +29,7 @@ app.MapGet("/", async ([FromServices] SqlConnection connection) =>
 .WithName("Hello")
 .WithOpenApi();
 
-app.MapGet("/", async (SqlDataSource dataSource) =>
+app.MapGet("/simpler", async (SqlDataSource dataSource) =>
 {
     await using var command = dataSource.CreateCommand("SELECT TOP 1 SupplierID FROM Suppliers");
     return "Hello World: " + await command.ExecuteScalarAsync();
