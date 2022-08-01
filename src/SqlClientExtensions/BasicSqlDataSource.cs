@@ -3,7 +3,8 @@
 /// <inheritdoc />
 public class BasicSqlDataSource : SqlDataSource
 {
-    public BasicSqlDataSource(SqlConnectionStringBuilder settings) : base(settings)
+    public BasicSqlDataSource(SqlConnectionStringBuilder settings, SqlDataSourceConfiguration configuration) 
+        : base(settings, configuration)
     {
     }
 }

@@ -7,7 +7,7 @@ using Microsoft.Data.SqlClient;
 namespace Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
-/// Extension method for setting up Npgsql services in an <see cref="IServiceCollection" />.
+/// Extension method for setting up SqlClient services in an <see cref="IServiceCollection" />.
 /// </summary>
 public static class SqlServiceCollectionExtensions
 {

@@ -51,11 +51,18 @@ namespace Microsoft.Data.SqlClient
         }
 
         /// <summary>
-        /// Builds and returns an <see cref="NpgsqlDataSource" /> which is ready for use.
+        /// Builds and returns an <see cref="SqlDataSource" /> which is ready for use.
         /// </summary>
         public SqlDataSource Build()
         {
-            return new BasicSqlDataSource(ConnectionStringBuilder);
+            var loggingConfiguration = _loggerFactory is null
+            ? SqlLoggingConfiguration.NullConfiguration
+            : new SqlLoggingConfiguration(_loggerFactory, _sensitiveDataLoggingEnabled);
+
+            var config = new SqlDataSourceConfiguration(
+                loggingConfiguration);
+
+            return new BasicSqlDataSource(ConnectionStringBuilder, config);
         }
     }
 }

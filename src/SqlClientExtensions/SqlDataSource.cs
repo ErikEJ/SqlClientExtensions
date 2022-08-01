@@ -1,4 +1,6 @@
-﻿using System.Data.Common;
+﻿using Microsoft.Extensions.Logging;
+using System.Data.Common;
+using System.Diagnostics;
 
 namespace Microsoft.Data.SqlClient;
 
@@ -42,10 +44,12 @@ public abstract class SqlDataSource : DbDataSource
     }
 
     public SqlDataSource(
-    SqlConnectionStringBuilder settings)
+        SqlConnectionStringBuilder settings,
+        SqlDataSourceConfiguration configuration)
     {
         Settings = settings;
         ConnectionString = settings.ConnectionString;
+        //connectionLogger = configuration.LoggingConfiguration.
     }
 
     /// <summary>
@@ -61,6 +65,7 @@ public abstract class SqlDataSource : DbDataSource
         try
         {
             await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+            Trace.TraceInformation("Open connection");
             return connection;
         }
         catch
