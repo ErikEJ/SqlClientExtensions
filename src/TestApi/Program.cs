@@ -37,5 +37,4 @@ app.MapGet("/simpler", async (SqlDataSource dataSource) =>
 .WithName("Simpler")
 .WithOpenApi();
 
-
 app.Run();

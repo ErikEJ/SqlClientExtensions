@@ -84,6 +84,7 @@ public abstract class SqlDataSource : DbDataSource
     /// <param name="commandText">An optional SQL text for the command.</param>
     public new SqlCommand CreateCommand(string? commandText = null)
     {
+        // Cannot figure out how to wrap SqlCommand, it is sealed
         var command = OpenConnection().CreateCommand();
         if (commandText != null)
         { 
