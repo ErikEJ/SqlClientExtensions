@@ -14,7 +14,7 @@ internal class SqlClientListener : EventListener
     public SqlClientListener(ILoggerFactory loggerFactory)
     {
         _loggerFactory = loggerFactory;
-        _defaultLogger = loggerFactory.CreateLogger(nameof(LoggerTraceListener));
+        _defaultLogger = loggerFactory.CreateLogger(nameof(SqlClientListener));
     }
 
     // https://docs.microsoft.com/en-us/sql/connect/ado-net/enable-eventsource-tracing?view=sql-server-ver16
