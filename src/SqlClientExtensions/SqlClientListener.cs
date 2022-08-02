@@ -1,20 +1,16 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Collections.Concurrent;
 using System.Diagnostics.Tracing;
-using System.Text;
 
 // https://khalidabuhakmeh.com/logging-trace-output-using-ilogger-in-dotnet-applications
 internal class SqlClientListener : EventListener
 {
     private readonly ILoggerFactory _loggerFactory;
-    private readonly ILogger _defaultLogger;
     private readonly ConcurrentDictionary<string, ILogger> _loggers = new();
-    private readonly StringBuilder _builder = new();
 
     public SqlClientListener(ILoggerFactory loggerFactory)
     {
         _loggerFactory = loggerFactory;
-        _defaultLogger = loggerFactory.CreateLogger(nameof(SqlClientListener));
     }
 
     // https://docs.microsoft.com/en-us/sql/connect/ado-net/enable-eventsource-tracing?view=sql-server-ver16
