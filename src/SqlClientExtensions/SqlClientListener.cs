@@ -37,7 +37,6 @@ internal class SqlClientListener : EventListener
 
     private LogLevel MapLevel(EventLevel eventLevel) => eventLevel switch
     {
-
         EventLevel.Verbose => LogLevel.Debug,
         EventLevel.Informational => LogLevel.Information,
         EventLevel.Critical => LogLevel.Critical,
