@@ -20,7 +20,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/hello", async ([FromServices] SqlConnection connection) =>
+app.MapGet("/hello", async (SqlConnection connection) =>
 {
     await connection.OpenAsync();
     await using var command = new SqlCommand("SELECT TOP 1 SupplierID FROM Suppliers", connection);
