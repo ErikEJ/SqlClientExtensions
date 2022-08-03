@@ -1,6 +1,6 @@
 [`Microsoft.Data.SqlClient`](https://github.com/dotnet/SqlClient) is the open source .NET data provider for Microsoft SQL Server. It allows you to connect and interact with SQL Server and Azure SQL Database using .NET.
 
-This package helps set up SqlClient in applications using dependency injection, notably ASP.NET and Worker Service applications. It allows easy configuration of your database connections and registers the appropriate services in your DI container. 
+This package helps set up SqlClient in applications using dependency injection, notably ASP.NET and Worker Service applications. It allows easy configuration of your database connections and registers the appropriate services in your DI container. It also enables you to log events from Microsoft.Data.SqlClient using standard .NET logging (ILogger).
 
 For example, if using the ASP.NET minimal web API, simply use the following to register `Microsoft.Data.SqlClient`:
 
