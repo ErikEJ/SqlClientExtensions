@@ -7,7 +7,7 @@
         <PackageId>ErikEJ.SqlClient.Extensions</PackageId>
         <PackageVersion>0.1.0-alpha</PackageVersion>
         <Authors>ErikEJ</Authors>
-        <Description>Makes it easier to use Microsoft.Data.SqlClient with Dependency Injection</Description>
+        <Description>Makes it easier to use Microsoft.Data.SqlClient with Dependency Injection and adds ILogger logging of SqlClient events.</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReleaseNotes>Initial experimental</PackageReleaseNotes>
         <PackageProjectUrl>https://github.com/ErikEJ/SqlClientExtensions</PackageProjectUrl>
