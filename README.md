@@ -2,8 +2,6 @@
 
 This package helps set up SqlClient in applications using dependency injection, notably ASP.NET and Worker Service applications. It allows easy configuration of your database connections and registers the appropriate services in your DI container. 
 
-You can use this [preview NuGet feed](https://ci.appveyor.com/nuget/sqlclientextensions) to get hold of a NuGet package so you can try it out.
-
 For example, if using the ASP.NET minimal web API, simply use the following to register `Microsoft.Data.SqlClient`:
 
 ```csharp
