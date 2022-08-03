@@ -65,6 +65,6 @@ You can also diable SqlClient logging completely like this:
    {
        setupAction.UseLoggerFactory(null);
    });
-```csharp
+```
 
 For more information, [see the SqlClient documentation](https://docs.microsoft.com/sql/connect/ado-net/introduction-microsoft-data-sqlclient-namespace).
