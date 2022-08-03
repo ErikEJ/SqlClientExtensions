@@ -8,22 +8,14 @@ namespace Microsoft.Data.SqlClient;
 /// </summary>
 public class SqlLoggingConfiguration
 {
-    private readonly SqlClientListener? sqlClientListener;
     internal static readonly SqlLoggingConfiguration NullConfiguration
-        = new(NullLoggerFactory.Instance, isParameterLoggingEnabled: false);
+        = new(NullLoggerFactory.Instance, false);
 
-    internal SqlLoggingConfiguration(ILoggerFactory loggerFactory, bool isParameterLoggingEnabled)
+    internal SqlLoggingConfiguration(ILoggerFactory loggerFactory, bool enableVerbose)
     {
         if (loggerFactory != NullLoggerFactory.Instance)
         {
-            sqlClientListener = new SqlClientListener(loggerFactory);
+            _ = new SqlClientListener(loggerFactory, enableVerbose);
         }
-        IsParameterLoggingEnabled = isParameterLoggingEnabled;
     }
-
-    /// <summary>
-    /// Determines whether parameter contents will be logged alongside SQL statements - this may reveal sensitive information.
-    /// Defaults to false.
-    /// </summary>
-    internal bool IsParameterLoggingEnabled { get; }
 }

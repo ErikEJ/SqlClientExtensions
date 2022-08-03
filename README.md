@@ -58,12 +58,21 @@ By default informational messages are logged, this can be configured via logging
 }
 ```
 
-You can also diable SqlClient logging completely like this:
+You can also disable SqlClient logging completely like this:
 
 ```csharp
    builder.Services.AddSqlDataSource("Server=.\\SQLEXPRESS;Database=Northwind;Integrated Security=true;Trust Server Certificate=true", setupAction =>
    {
        setupAction.UseLoggerFactory(null);
+   });
+```
+
+And you can turn on full logging like this:
+
+```csharp
+   builder.Services.AddSqlDataSource("Server=.\\SQLEXPRESS;Database=Northwind;Integrated Security=true;Trust Server Certificate=true", setupAction =>
+   {
+       setupAction.EnableVerboseLogging();
    });
 ```
 

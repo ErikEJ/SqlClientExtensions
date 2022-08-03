@@ -8,7 +8,7 @@ namespace Microsoft.Data.SqlClient
     public class SqlDataSourceBuilder
     {
         ILoggerFactory? _loggerFactory;
-        bool _sensitiveDataLoggingEnabled;
+        bool _verboseLoggingEnabled;
 
         /// <summary>
         /// A connection string builder that can be used to configured the connection string on the builder.
@@ -38,15 +38,13 @@ namespace Microsoft.Data.SqlClient
         }
 
         /// <summary>
-        /// Enables parameters to be included in logging. This includes potentially sensitive information from data sent to SQL Server.
-        /// You should only enable this flag in development, or if you have the appropriate security measures in place based on the
-        /// sensitivity of this data.
+        /// Enable verbose logging.
         /// </summary>
-        /// <param name="parameterLoggingEnabled">If <see langword="true" />, then sensitive data is logged.</param>
+        /// <param name="verboseLoggingEnabled">If <see langword="true" />, then logging is verbose.</param>
         /// <returns>The same builder instance so that multiple calls can be chained.</returns>
-        public SqlDataSourceBuilder EnableParameterLogging(bool parameterLoggingEnabled = true)
+        public SqlDataSourceBuilder EnableVerboseLogging(bool verboseLoggingEnabled = true)
         {
-            _sensitiveDataLoggingEnabled = parameterLoggingEnabled;
+            _verboseLoggingEnabled = verboseLoggingEnabled;
             return this;
         }
 
@@ -57,7 +55,7 @@ namespace Microsoft.Data.SqlClient
         {
             var loggingConfiguration = _loggerFactory is null
             ? SqlLoggingConfiguration.NullConfiguration
-            : new SqlLoggingConfiguration(_loggerFactory, _sensitiveDataLoggingEnabled);
+            : new SqlLoggingConfiguration(_loggerFactory, _verboseLoggingEnabled);
 
             var config = new SqlDataSourceConfiguration(
                 loggingConfiguration);

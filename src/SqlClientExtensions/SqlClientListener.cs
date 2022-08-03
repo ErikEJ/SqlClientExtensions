@@ -6,11 +6,13 @@ using System.Diagnostics.Tracing;
 internal class SqlClientListener : EventListener
 {
     private readonly ILoggerFactory _loggerFactory;
+    private readonly bool _verboseLogging;
     private readonly ConcurrentDictionary<string, ILogger> _loggers = new();
 
-    public SqlClientListener(ILoggerFactory loggerFactory)
+    public SqlClientListener(ILoggerFactory loggerFactory, bool enableVerbose)
     {
         _loggerFactory = loggerFactory;
+        _verboseLogging = enableVerbose;
     }
 
     // https://docs.microsoft.com/en-us/sql/connect/ado-net/enable-eventsource-tracing?view=sql-server-ver16
@@ -19,9 +21,10 @@ internal class SqlClientListener : EventListener
         // Only enable events from SqlClientEventSource.
         if (eventSource.Name.Equals("Microsoft.Data.SqlClient.EventSource"))
         {
+            var keyWords = _verboseLogging ? EventKeywords.All : (EventKeywords)2;
             // Use EventKeyWord 2 to capture basic application flow events.
             // See the above table for all available keywords.
-            EnableEvents(eventSource, EventLevel.Informational, (EventKeywords)2);
+            EnableEvents(eventSource, EventLevel.Informational, keyWords);
         }
     }
 

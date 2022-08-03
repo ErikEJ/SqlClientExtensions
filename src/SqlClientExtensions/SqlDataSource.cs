@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using System.Data.Common;
+﻿using System.Data.Common;
 using System.Diagnostics;
 
 namespace Microsoft.Data.SqlClient;
@@ -49,7 +48,6 @@ public abstract class SqlDataSource : DbDataSource
     {
         Settings = settings;
         ConnectionString = settings.ConnectionString;
-        //connectionLogger = configuration.LoggingConfiguration.
     }
 
     /// <summary>

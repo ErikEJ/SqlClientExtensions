@@ -30,7 +30,8 @@ app.MapGet("/hello", async (SqlConnection connection) =>
 
 app.MapGet("/simpler", async (SqlDataSource dataSource) =>
 {
-    await using var command = dataSource.CreateCommand("SELECT TOP 1 SupplierID FROM Suppliers");
+    await using var command = dataSource.CreateCommand("SELECT TOP 1 CustomerId FROM Customers WHERE CustomerId = @CustomerId");
+    command.Parameters.Add(new SqlParameter("@CustomerId", "ALFKI"));
     return "Hello World: " + await command.ExecuteScalarAsync();
 })
 .WithName("Simpler")
