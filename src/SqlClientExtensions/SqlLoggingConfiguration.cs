@@ -8,14 +8,16 @@ namespace Microsoft.Data.SqlClient;
 /// </summary>
 public class SqlLoggingConfiguration
 {
-    private readonly SqlClientListener sqlClientListener;
+    private readonly SqlClientListener? sqlClientListener;
     internal static readonly SqlLoggingConfiguration NullConfiguration
         = new(NullLoggerFactory.Instance, isParameterLoggingEnabled: false);
 
     internal SqlLoggingConfiguration(ILoggerFactory loggerFactory, bool isParameterLoggingEnabled)
     {
-        sqlClientListener = new SqlClientListener(loggerFactory);
-
+        if (loggerFactory != NullLoggerFactory.Instance)
+        {
+            sqlClientListener = new SqlClientListener(loggerFactory);
+        }
         IsParameterLoggingEnabled = isParameterLoggingEnabled;
     }
 

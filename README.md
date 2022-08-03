@@ -42,6 +42,29 @@ app.MapGet("/", async (SqlDataSource dataSource) =>
 });
 ```
 
-Finally, the `AddSqlDataSource` method also accepts a lambda parameter allowing you to configure aspects of SqlClient beyond the connection string.
+The AddSqlDataSource method also enables logging in your ASP.NET Core app.
+
+By default informational messages are logged, this can be configured via logging configuration:
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning",
+      "Microsoft.Data.SqlClient": "Warning"
+    }
+  }
+}
+```
+
+You can also diable SqlClient logging completely like this:
+
+```csharp
+   builder.Services.AddSqlDataSource("Server=.\\SQLEXPRESS;Database=Northwind;Integrated Security=true;Trust Server Certificate=true", setupAction =>
+   {
+       setupAction.UseLoggerFactory(null);
+   });
+```csharp
 
 For more information, [see the SqlClient documentation](https://docs.microsoft.com/sql/connect/ado-net/introduction-microsoft-data-sqlclient-namespace).
