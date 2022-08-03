@@ -1,4 +1,4 @@
-[`Microsoft.Data.SqlClient`](https://github.com/dotnet/SqlClient) is the open source .NET data provider for PostgreSQL. It allows you to connect and interact with SQL Server and Azure SQL Database using .NET.
+[`Microsoft.Data.SqlClient`](https://github.com/dotnet/SqlClient) is the open source .NET data provider for Microsoft SQL Server. It allows you to connect and interact with SQL Server and Azure SQL Database using .NET.
 
 This package helps set up SqlClient in applications using dependency injection, notably ASP.NET and Worker Service applications. It allows easy configuration of your database connections and registers the appropriate services in your DI container. 
 
@@ -42,7 +42,7 @@ app.MapGet("/", async (SqlDataSource dataSource) =>
 });
 ```
 
-The AddSqlDataSource method also enables logging in your ASP.NET Core app.
+The AddSqlDataSource method also enables logging of `Microsoft.Data.SqlClient` activity in your ASP.NET Core app.
 
 By default informational messages are logged, this can be configured via logging configuration:
 
