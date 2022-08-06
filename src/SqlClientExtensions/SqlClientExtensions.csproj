@@ -1,15 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>ErikEJ.SqlClient.Extensions</PackageId>
-        <PackageVersion>0.1.1-alpha</PackageVersion>
+        <PackageVersion>0.1.2-alpha</PackageVersion>
         <Authors>ErikEJ</Authors>
         <Description>Makes it easier to use Microsoft.Data.SqlClient with Dependency Injection and adds ILogger logging of SqlClient events.</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageReleaseNotes>Initial experimental</PackageReleaseNotes>
+        <PackageReleaseNotes>Added .NET 6 support</PackageReleaseNotes>
         <PackageProjectUrl>https://github.com/ErikEJ/SqlClientExtensions</PackageProjectUrl>
         <MinClientVersion>5.0</MinClientVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -21,9 +21,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0-preview.6.22324.4" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0-preview.6.22324.4" />
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
     </ItemGroup>
 
