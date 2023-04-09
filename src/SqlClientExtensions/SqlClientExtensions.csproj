@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>ErikEJ.SqlClient.Extensions</PackageId>
-        <PackageVersion>1.0-preview1</PackageVersion>
+        <PackageVersion>1.0.0</PackageVersion>
         <Authors>ErikEJ</Authors>
         <Description>Makes it easier to use Microsoft.Data.SqlClient with Dependency Injection and adds ILogger logging of SqlClient events.</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -21,7 +21,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.0" />
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
