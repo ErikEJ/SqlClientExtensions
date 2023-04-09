@@ -19,7 +19,7 @@ internal class SqlClientListener : EventListener
     protected override void OnEventSourceCreated(EventSource eventSource)
     {
         // Only enable events from SqlClientEventSource.
-        if (eventSource.Name.Equals("Microsoft.Data.SqlClient.EventSource"))
+        if (eventSource.Name.Equals("Microsoft.Data.SqlClient.EventSource", StringComparison.OrdinalIgnoreCase))
         {
             var keyWords = _verboseLogging ? EventKeywords.All : (EventKeywords)2;
             // Use EventKeyWord 2 to capture basic application flow events.
@@ -38,7 +38,7 @@ internal class SqlClientListener : EventListener
         logger.Log(MapLevel(eventData.Level), eventData.Payload?.FirstOrDefault()?.ToString() ?? eventData.Message);
     }
 
-    private LogLevel MapLevel(EventLevel eventLevel) => eventLevel switch
+    private static LogLevel MapLevel(EventLevel eventLevel) => eventLevel switch
     {
         EventLevel.Verbose => LogLevel.Debug,
         EventLevel.Informational => LogLevel.Information,

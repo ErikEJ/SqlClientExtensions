@@ -46,6 +46,8 @@ public abstract class SqlDataSource : DbDataSource
         SqlConnectionStringBuilder settings,
         SqlDataSourceConfiguration configuration)
     {
+        ArgumentNullException.ThrowIfNull(settings);
+
         Settings = settings;
         ConnectionString = settings.ConnectionString;
     }
@@ -106,5 +108,9 @@ public abstract class SqlDataSource : DbDataSource
     /// Creates a new <see cref="SqlDataSource" /> for the given <paramref name="connectionStringBuilder" />.
     /// </summary>
     public static SqlDataSource Create(SqlConnectionStringBuilder connectionStringBuilder)
-        => Create(connectionStringBuilder.ToString());
+    { 
+        ArgumentNullException.ThrowIfNull(connectionStringBuilder);
+
+        return Create(connectionStringBuilder.ToString());
+    }
 }
