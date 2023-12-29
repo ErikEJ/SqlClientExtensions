@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlClientExtensions", "SqlClientExtensions\SqlClientExtensions.csproj", "{B6D1E13C-319E-4804-A2FA-F06DECA5E9A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlClientExtensions", "src\SqlClientExtensions\SqlClientExtensions.csproj", "{B6D1E13C-319E-4804-A2FA-F06DECA5E9A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApi", "TestApi\TestApi.csproj", "{7E4959B0-67B4-4F1A-8451-7A48C9B49F93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApi", "src\TestApi\TestApi.csproj", "{7E4959B0-67B4-4F1A-8451-7A48C9B49F93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
