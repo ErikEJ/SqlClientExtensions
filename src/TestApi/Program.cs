@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.OpenApi;
 using Microsoft.Data.SqlClient;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -49,13 +49,27 @@ namespace Microsoft.Data.SqlClient
         }
 
         /// <summary>
+        /// Disable logging.
+        /// </summary>
+        /// <param name="verboseLoggingEnabled">If <see langword="true" />, then logging is verbose.</param>
+        /// <returns>The same builder instance so that multiple calls can be chained.</returns>
+        public SqlDataSourceBuilder DisableLogging(bool disabled = false)
+        {
+            if (disabled)
+            {
+                _loggerFactory = null;
+            }
+            return this;
+        }
+
+        /// <summary>
         /// Builds and returns an <see cref="SqlDataSource" /> which is ready for use.
         /// </summary>
         public SqlDataSource Build()
         {
             var loggingConfiguration = _loggerFactory is null
-            ? SqlLoggingConfiguration.NullConfiguration
-            : new SqlLoggingConfiguration(_loggerFactory, _verboseLoggingEnabled);
+                ? SqlLoggingConfiguration.NullConfiguration
+                : new SqlLoggingConfiguration(_loggerFactory, _verboseLoggingEnabled);
 
             var config = new SqlDataSourceConfiguration(
                 loggingConfiguration);

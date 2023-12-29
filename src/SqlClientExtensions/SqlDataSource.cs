@@ -42,7 +42,7 @@ public abstract class SqlDataSource : DbDataSource
         }
     }
 
-    public SqlDataSource(
+    protected SqlDataSource(
         SqlConnectionStringBuilder settings,
         SqlDataSourceConfiguration configuration)
     {
