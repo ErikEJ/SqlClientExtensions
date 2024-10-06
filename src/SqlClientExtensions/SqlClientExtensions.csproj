@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>ErikEJ.SqlClient.Extensions</PackageId>
-        <PackageVersion>1.0.4</PackageVersion>
+        <PackageVersion>1.0.5</PackageVersion>
         <Authors>ErikEJ</Authors>
         <Description>Makes it easier to use Microsoft.Data.SqlClient with Dependency Injection and adds ILogger logging of SqlClient events.</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageReleaseNotes>Updated Microsoft.Data.SqlClient</PackageReleaseNotes>
+        <PackageReleaseNotes>Updated Microsoft.Data.SqlClient, remove .NET 7 support</PackageReleaseNotes>
         <PackageProjectUrl>https://github.com/ErikEJ/SqlClientExtensions</PackageProjectUrl>
         <MinClientVersion>5.0</MinClientVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

@@ -1,7 +1,4 @@
-﻿#if !NET7_0_OR_GREATER
-
-using System.Threading;
-using System.Threading.Tasks;
+﻿#if !NET8_0_OR_GREATER
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member (compatibility shim for old TFMs)
 
