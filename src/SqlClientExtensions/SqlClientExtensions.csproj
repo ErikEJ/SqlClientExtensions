@@ -27,7 +27,7 @@
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
     </ItemGroup>
 
-    <PropertyGroup Condition="'$(CI)' == 'True'">
+    <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'True'">
 	    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     </PropertyGroup>
 
