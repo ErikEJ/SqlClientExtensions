@@ -24,7 +24,7 @@
         <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.3" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.2" />
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.2" />
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.102" PrivateAssets="All" />
     </ItemGroup>
 
     <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'True'">
